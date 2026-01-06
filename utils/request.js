@@ -21,8 +21,27 @@ instance.interceptors.response.use(
     return res
   },
   (err) => {
-    return Promise.reject(err);
+    return Promise.reject(serializeAxiosError(err));
   },
 );
+
+function serializeAxiosError(err) {
+  
+  return JSON.stringify({
+    name: err.name,
+    message: err.message,
+    code: err.code,
+    status: err.response?.status,
+    headers: err.response?.headers,
+    data: err.response?.data,
+    config: {
+      url: err.config?.url,
+      method: err.config?.method,
+      timeout: err.config?.timeout,
+      headers: err.config?.headers
+    }
+  }, null, 2);
+}
+
 
 export default instance;
