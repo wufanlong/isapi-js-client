@@ -11,8 +11,10 @@ const UNDEFINED = 'Undefined';
 const AUTH = 'auth:';
 const AUTH_INT = 'auth-int:';
 
-export const authentication = {
+const authentication = {
     UNDEFINED,
     AUTH,
     AUTH_INT
 };
+
+export default authentication;
