@@ -1,8 +1,8 @@
 import request from '../utils/request.js';
 
 const encryption = {
-    securityCapabilities(ip,options) {
-        return request.get(`http://${ip}/ISAPI/Security/capabilities`, options);
+    securityCapabilities(options) {
+        return request.get(`http://${options.ip}/ISAPI/Security/capabilities`, options.axiosOptions);
     }
 }
 
