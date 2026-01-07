@@ -1,9 +1,9 @@
 import request from '../utils/request.js';
 
-const encryption = {
+const event = {
     securityCapabilities(options) {
         return request.get(`http://${options.ip}/ISAPI/Security/capabilities`, options.axiosOptions);
     }
 }
 
-export default encryption;
+export default event;

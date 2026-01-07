@@ -21,7 +21,11 @@ instance.interceptors.response.use(
     return res
   },
   (err) => {
-    return Promise.reject(serializeAxiosError(err));
+    if (err.response?.status === 401) {
+      return Promise.reject(err);
+    } else {
+      return Promise.reject(serializeAxiosError(err));
+    }
   },
 );
 
