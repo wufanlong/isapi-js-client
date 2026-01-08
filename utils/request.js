@@ -3,12 +3,12 @@ import axios from 'axios';
 const instance = axios.create({});
 
 instance.interceptors.request.use((config) => {
-  // console.log('[Axios Request]')
-  // console.log('URL:', config.baseURL ? config.baseURL + config.url : config.url)
-  // console.log('Method:', config.method)
-  // console.log('Headers:', config.headers)
-  // console.log('Params:', config.params)
-  // console.log('Data:', config.data)
+  console.log('[Axios Request]')
+  console.log('URL:', config.baseURL ? config.baseURL + config.url : config.url)
+  console.log('Method:', config.method)
+  console.log('Headers:', config.headers)
+  console.log('Params:', config.params)
+  console.log('Data:', config.data)
   return config
 });
 
