@@ -1,7 +1,10 @@
 import request from '../utils/request.js';
 
 const security = {
-    securityCapabilities(options) {
+    getUserCheck(options) {
+        return request.get(`http://${options.ip}/ISAPI/Security/userCheck`, options.axiosOptions);
+    },
+    getSecurityCapabilities(options) {
         return request.get(`http://${options.ip}/ISAPI/Security/capabilities`, options.axiosOptions);
     }
 }

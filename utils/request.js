@@ -28,7 +28,8 @@ instance.interceptors.response.use(
     if (err.response?.status === 401) {
       return Promise.reject(err);
     } else {
-      return Promise.reject(serializeAxiosError(err));
+      // return Promise.reject(serializeAxiosError(err));
+      return Promise.reject(err);
     }
   },
 );
