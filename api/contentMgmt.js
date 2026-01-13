@@ -1,9 +1,12 @@
 import request from '../utils/request.js';
 
 const contentMgmt = {
-    securityCapabilities(options) {
-        return request.get(`http://${options.ip}/ISAPI/Security/capabilities`, options.axiosOptions);
-    }
+    getCapabilities(options) {
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/capabilities`, options.axiosOptions);
+    },
+    getDownload(options) {
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/download`, options.axiosOptions);
+    },
 }
 
 export default contentMgmt;

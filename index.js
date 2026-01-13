@@ -1,5 +1,5 @@
 import AUXInfo from './api/AUXInfo.js'
-import ContentMgmt from './api/ContentMgmt.js'
+import ContentMgmt from './api/contentMgmt.js'
 import event from './api/event.js'
 import image from './api/image.js'
 import PTZCtrl from './api/PTZCtrl.js'
