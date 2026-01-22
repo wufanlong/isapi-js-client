@@ -244,6 +244,18 @@ const contentMgmt = {
     getStorageHddSMARTTestStatusByID(options) {
         return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVal[0]}/SMARTTest/status`, options.axiosOptions);
     },
+    getStorageHddCapabilities(options) {
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/capabilities`, options.axiosOptions);
+    },
+    putStorageHddFormat(options) {
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/format`, options.axiosData, options.axiosOptions);
+    },
+    putStorageHddSpecifyHddFormat(options) {
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/specifyHddFormat?format=json`, options.axiosData, options.axiosOptions);
+    },
+    getStorageQuota(options) {
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/quota`, options.axiosOptions);
+    }
 }
     
 export default contentMgmt;
