@@ -1,6 +1,9 @@
 import request from '../utils/request.js';
 
 const system = {
+    putActivate(options) {
+        return request.put(`http://${options.ip}/ISAPI/System/activate`, options.axiosData, options.axiosOptions)
+    },
     network: {
         getInterfaces(options) {
             return request.get(`http://${options.ip}/ISAPI/System/Network/interfaces`, options.axiosOptions);
