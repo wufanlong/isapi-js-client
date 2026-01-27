@@ -61,25 +61,51 @@ function request(url, data, options) {
         }
       });
 
-      resolve(toAxiosResponse({
-        statusLine,
+
+      const { status, statusText } = parseStatusLine(statusLine);
+      const obj = {
+        status,
+        statusText,
         headers,
         body: bodyText,
         raw: rawText,
-      }));
+      }
+      if (status !== 200) {
+        reject(toAxiosResponse(obj))
+      } else {
+        resolve(toAxiosResponse(obj));
+      }
     });
   });
 }
 
 function toAxiosResponse(rawResult, config = {}) {
-  const { status, statusText } = parseStatusLine(rawResult.statusLine);
+  if (rawResult.status !== 200) {
+    return {
+      name: 'AxiosError',
+      message: 'Request failed with status code ' + rawResult.status,
+      code: 'ERR_BAD_REQUEST',
+      request: {
+        raw: rawResult.raw
+      },
+      response: {
+        status: rawResult.status,
+        statusText: rawResult.statusText,
+        headers: rawResult.headers,
+        data: rawResult.body
+      }
+    }
+  }
 
   return {
     data: rawResult.body,
-    status,
-    statusText,
+    status: rawRequest.status,
+    statusText: rawRequest.statusText,
     headers: rawResult.headers,
     config,
+    // request: {
+    //   raw: JSON.stringify(rawResult.raw).replaceAll("\n", "").replaceAll("\r", "").replaceAll("+", "")
+    // },
     request: {
       raw: rawResult.raw
     }
