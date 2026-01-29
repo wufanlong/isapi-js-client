@@ -11,12 +11,10 @@ function request(url, data, options) {
     let chunks = [];
 
     socket.setTimeout(timeout);
-
     socket.connect(port, ip, () => {
-      const req =
+      const req = Object.keys(options).map(key => `${key}: ${options[key]}`).join("\r\n") +
         `POST ${path} HTTP/1.1\r\n` +
         `Host: ${ip}\r\n` +
-        `Content-Type: application/xml\r\n` +
         `Content-Length: ${Buffer.byteLength(body)}\r\n` +
         `Connection: close\r\n` +
         `\r\n` +
@@ -35,7 +33,7 @@ function request(url, data, options) {
     });
 
     socket.on("error", (err) => {
-      resolve({
+      reject({
         error: err.message,
         raw: Buffer.concat(chunks),
       });
