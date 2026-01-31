@@ -12,11 +12,13 @@ function request(url, data, options) {
 
     socket.setTimeout(timeout);
     socket.connect(port, ip, () => {
-      const req = Object.keys(options).map(key => `${key}: ${options[key]}`).join("\r\n") +
-        `POST ${path} HTTP/1.1\r\n` +
+      const params = options.params ? "?" + Object.keys(options.params).map(key => key + "=" + options.params[key]).join('&') : ''
+      const req = 
+        `POST ${path}${params} HTTP/1.1\r\n` +
         `Host: ${ip}\r\n` +
         `Content-Length: ${Buffer.byteLength(body)}\r\n` +
         `Connection: close\r\n` +
+        Object.keys(options.headers).map(key => `${key}: ${options.headers[key]}\r\n`).join('') +
         `\r\n` +
         body;
 
@@ -61,7 +63,7 @@ function request(url, data, options) {
 
 
       const { status, statusText } = parseStatusLine(statusLine);
-      const obj = {
+      const rawResult = {
         status,
         statusText,
         headers,
@@ -69,9 +71,9 @@ function request(url, data, options) {
         raw: rawText,
       }
       if (status !== 200) {
-        reject(toAxiosResponse(obj))
+        reject(toAxiosResponse(rawResult))
       } else {
-        resolve(toAxiosResponse(obj));
+        resolve(toAxiosResponse(rawResult));
       }
     });
   });
@@ -97,8 +99,8 @@ function toAxiosResponse(rawResult, config = {}) {
 
   return {
     data: rawResult.body,
-    status: rawRequest.status,
-    statusText: rawRequest.statusText,
+    status: rawResult.status,
+    statusText: rawResult.statusText,
     headers: rawResult.headers,
     config,
     // request: {
