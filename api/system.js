@@ -30,6 +30,9 @@ const system = {
     putVideoInputsChannelsByID(options) {
         return request.put(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions)
     },
+    putReboot(options) {
+        return request.put(`http://${options.ip}/ISAPI/System/reboot`, options.axiosData, options.axiosOptions)
+    },
 }
 
 export default system;
