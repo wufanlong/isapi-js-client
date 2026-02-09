@@ -74,6 +74,34 @@ const security = {
     putDeviceCertificateCertificatesRecreateByID(options) {
         return request.put(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/${options.axiosPathVal[0]}/recreate?format=json`, options.axiosData, options.axiosOptions); 
     },
+    getDeviceCertificateCertificatesStatusByID(options) {
+        return request.get(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/${options.axiosPathVal[0]}/status?format=json`, options.axiosOptions); 
+    },
+    getDeviceCertificateCertificateCapabilities(options) {
+        return request.get(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/capabilities?format=json`, options.axiosOptions); 
+    },
+    putDeviceCertificateCertificatesRecreate(options) {
+        return request.put(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/recreate?format=json`, options.axiosData, options.axiosOptions); 
+    },
+    getDeviceCertificateCertificatesStatus(options) {
+        return request.get(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/status?format=json`, options.axiosOptions); 
+    },
+    getDeviceCertificateCertificates(options) {
+        return request.get(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates?format=json`, options.axiosOptions); 
+    },
+    putDeviceCertificateByCustomID(options) {
+        return request.put(`http://${options.ip}/ISAPI/Security/deviceCertificate?customID=${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions); 
+    },
+    getDoubleVerificationUsersByID(options) {
+        return request.get(`http://${options.ip}/ISAPI/Security/doubleVerification/users/${options.axiosPathVal[0]}?format=json`, options.axiosOptions); 
+    },
+    putDoubleVerificationUsersByID(options) {
+        return request.put(`http://${options.ip}/ISAPI/Security/doubleVerification/users/${options.axiosPathVal[0]}?format=json`, options.axiosData, options.axiosOptions); 
+    },
+    deleteDoubleVerificationUsersByID(options) {
+        return request.delete(`http://${options.ip}/ISAPI/Security/doubleVerification/users/${options.axiosPathVal[0]}?format=json`, options.axiosOptions); 
+    },
+
     getUserCheck(options) {
         return request.get(`http://${options.ip}/ISAPI/Security/userCheck`, options.axiosOptions);
     },

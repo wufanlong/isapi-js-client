@@ -12,6 +12,9 @@ const system = {
     getDeviceInfo(options) {
         return request.get(`http://${options.ip}/ISAPI/System/deviceInfo`, options.axiosOptions);
     },
+    putDeviceInfo(options) {
+        return request.put(`http://${options.ip}/ISAPI/System/deviceInfo`, options.axiosData, options.axiosOptions);
+    },
     getVideoInputsChannelsOverlaysByID(options) {
         return request.get(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVal[0]}/overlays`, options.axiosOptions)
     },
