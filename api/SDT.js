@@ -17,7 +17,7 @@ const SDT = {
         return request.post(`http://${options.ip}/ISAPI/SDT/Management/IntelligentSearch/export?format=json`, options.axiosData, options.axiosOptions);
     },
     getManagementIntelligentSearchExportProgressByTaskID(options) {
-        return request.get(`http://${options.ip}/ISAPI/SDT/Management/IntelligentSearch/export/progress?format=json&taskID=${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/SDT/Management/IntelligentSearch/export/progress?format=json&taskID=${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     getManagementIntelligentSearchCapabilities(options) {
         return request.get(`http://${options.ip}/ISAPI/SDT/Management/IntelligentSearch/capabilities?format=json`, options.axiosOptions);

@@ -11,7 +11,7 @@ const contentMgmt = {
         return request.get(`http://${options.ip}/ISAPI/ContentMgmt/download/capabilities`, options.axiosOptions);
     },
     getDownloadToUSBProgress(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/download/toUSB/${options.axiosPathVal[0]}/progress?format=json`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/download/toUSB/${options.axiosPathVar[0]}/progress?format=json`, options.axiosOptions);
     },
     getDownloadToUSBCapabilities(options) {
         return request.get(`http://${options.ip}/ISAPI/ContentMgmt/download/toUSB/capabilities?format=json`, options.axiosOptions);
@@ -29,31 +29,31 @@ const contentMgmt = {
         return request.post(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels`, options.axiosData, options.axiosOptions);
     },
     getInputProxyChannelsByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     putInputProxyChannelsByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions);
     },
     deleteInputProxyChannelsByID(options) {
-        return request.delete(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.delete(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     getInputProxyChannelsCapabilitiesByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVal[0]}/capabilities`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVar[0]}/capabilities`, options.axiosOptions);
     },
     getInputProxyChannelsChanCtrlByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVal[0]}/chanCtrl`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVar[0]}/chanCtrl`, options.axiosOptions);
     },
     putInputProxyChannelsChanCtrlByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVal[0]}/chanCtrl`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVar[0]}/chanCtrl`, options.axiosData, options.axiosOptions);
     },
     postInputProxyChannelsPortMapParamByID(options) {
-        return request.post(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVal[0]}/portMapParam`, options.axiosData, options.axiosOptions);
+        return request.post(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVar[0]}/portMapParam`, options.axiosData, options.axiosOptions);
     },
     getInputProxyChannelsRebootByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVal[0]}/reboot`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVar[0]}/reboot`, options.axiosOptions);
     },
     getInputProxyChannelsStatusByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVal[0]}/status`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/${options.axiosPathVar[0]}/status`, options.axiosOptions);
     },
     putInputProxyChannelsActivate(options) {
         return request.put(`http://${options.ip}/ISAPI/ContentMgmt/InputProxy/channels/activate`, options.axiosData, options.axiosOptions);
@@ -83,16 +83,16 @@ const contentMgmt = {
         return request.post(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/inputs`, options.axiosData, options.axiosOptions);
     },
     getIOProxyInputsByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/inputs/${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/inputs/${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     putIOProxyInputsByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/inputs/${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/inputs/${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions);
     },
     deleteIOProxyInputsByID(options) {
-        return request.delete(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/inputs/${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.delete(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/inputs/${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     getIOProxyInputsStatusByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/inputs/${options.axiosPathVal[0]}/status`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/inputs/${options.axiosPathVar[0]}/status`, options.axiosOptions);
     },
     getIOProxyOutputs(options) {
         return request.get(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/outputs`, options.axiosOptions);
@@ -104,19 +104,19 @@ const contentMgmt = {
         return request.post(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/outputs`, options.axiosData, options.axiosOptions);
     },
     getIOProxyOutputsByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/outputs/${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/outputs/${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     putIOProxyOutputsByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/outputs/${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/outputs/${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions);
     },
     deleteIOProxyOutputsByID(options) {
-        return request.delete(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/outputs/${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.delete(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/outputs/${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     getIOProxyOutputsStatusByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/outputs/${options.axiosPathVal[0]}/status`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/outputs/${options.axiosPathVar[0]}/status`, options.axiosOptions);
     },
     putIOProxyOutputsTriggerByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/outputs/${options.axiosPathVal[0]}/trigger`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/IOProxy/outputs/${options.axiosPathVar[0]}/trigger`, options.axiosData, options.axiosOptions);
     },
     getLogConfig(options) {
         return request.get(`http://${options.ip}/ISAPI/ContentMgmt/logConfig`, options.axiosOptions);
@@ -134,13 +134,13 @@ const contentMgmt = {
         return request.post(`http://${options.ip}/ISAPI/ContentMgmt/logSearch/dataPackage`, options.axiosData, options.axiosOptions);
     },
     putRecordControlManualRefreshChannelsByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/record/control/manualRefresh/channels/${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/record/control/manualRefresh/channels/${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions);
     },
     postRecordControlManualStartTracksByID(options) {
-        return request.post(`http://${options.ip}/ISAPI/ContentMgmt/record/control/manual/start/tracks/${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions);
+        return request.post(`http://${options.ip}/ISAPI/ContentMgmt/record/control/manual/start/tracks/${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions);
     },
     postRecordControlManualStopTracksByID(options) {
-        return request.post(`http://${options.ip}/ISAPI/ContentMgmt/record/control/manual/stop/tracks/${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions);
+        return request.post(`http://${options.ip}/ISAPI/ContentMgmt/record/control/manual/stop/tracks/${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions);
     },
     getRecordProfile(options) {
         return request.get(`http://${options.ip}/ISAPI/ContentMgmt/record/profile`, options.axiosOptions);
@@ -158,19 +158,19 @@ const contentMgmt = {
         return request.post(`http://${options.ip}/ISAPI/ContentMgmt/record/tracks`, options.axiosData, options.axiosOptions);
     },
     getRecordTracksByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/record/tracks/${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/record/tracks/${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     putRecordTracksByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/record/tracks/${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/record/tracks/${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions);
     },
     deleteRecordTracksByID(options) {
-        return request.delete(`http://${options.ip}/ISAPI/ContentMgmt/record/tracks/${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.delete(`http://${options.ip}/ISAPI/ContentMgmt/record/tracks/${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     getRecordTracksCapabilitiesByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/record/tracks/${options.axiosPathVal[0]}/capabilities`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/record/tracks/${options.axiosPathVar[0]}/capabilities`, options.axiosOptions);
     },
     postRecordTracksDailyDistributionByID(options) {
-        return request.post(`http://${options.ip}/ISAPI/ContentMgmt/record/tracks/${options.axiosPathVal[0]}/dailyDistribution`, options.axiosData, options.axiosOptions);
+        return request.post(`http://${options.ip}/ISAPI/ContentMgmt/record/tracks/${options.axiosPathVar[0]}/dailyDistribution`, options.axiosData, options.axiosOptions);
     },
     getSearch(options) {
         return request.get(`http://${options.ip}/ISAPI/ContentMgmt/search`, options.axiosOptions);
@@ -203,34 +203,34 @@ const contentMgmt = {
         return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd`, options.axiosOptions);
     },
     getStorageHddByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     putStorageHddBadSectorsTestPauseByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVal[0]}/BadSectorsTest/pause`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVar[0]}/BadSectorsTest/pause`, options.axiosData, options.axiosOptions);
     },
     putStorageHddBadSectorsTestResumeByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVal[0]}/BadSectorsTest/resume`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVar[0]}/BadSectorsTest/resume`, options.axiosData, options.axiosOptions);
     },
     putStorageHddBadSectorsTestStartByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVal[0]}/BadSectorsTest/start`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVar[0]}/BadSectorsTest/start`, options.axiosData, options.axiosOptions);
     },
     getStorageHddBadSectorsTestStatusByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVal[0]}/BadSectorsTest/status`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVar[0]}/BadSectorsTest/status`, options.axiosOptions);
     },
     putStorageHddBadSectorsTestStopByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVal[0]}/BadSectorsTest/stop`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVar[0]}/BadSectorsTest/stop`, options.axiosData, options.axiosOptions);
     },
     putStorageHddEncryptFormatByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVal[0]}/EncryptFormat?format=json`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVar[0]}/EncryptFormat?format=json`, options.axiosData, options.axiosOptions);
     },
     putStorageHddEncryptVerfyByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVal[0]}/EncryptVerfy?format=json`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVar[0]}/EncryptVerfy?format=json`, options.axiosData, options.axiosOptions);
     },
     getStorageHddFormatStatusByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVal[0]}/formatStatus`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVar[0]}/formatStatus`, options.axiosOptions);
     },
     putStorageHddFormatByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVal[0]}/format`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVar[0]}/format`, options.axiosData, options.axiosOptions);
     },
     getStorageHddSMARTTestConfig(options) {
         return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/SMARTTest/config`, options.axiosOptions);
@@ -239,10 +239,10 @@ const contentMgmt = {
         return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/SMARTTest/config`, options.axiosData, options.axiosOptions);
     },
     putStorageHddSMARTTestStartByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVal[0]}/SMARTTest/start`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVar[0]}/SMARTTest/start`, options.axiosData, options.axiosOptions);
     },
     getStorageHddSMARTTestStatusByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVal[0]}/SMARTTest/status`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/${options.axiosPathVar[0]}/SMARTTest/status`, options.axiosOptions);
     },
     getStorageHddCapabilities(options) {
         return request.get(`http://${options.ip}/ISAPI/ContentMgmt/Storage/hdd/capabilities`, options.axiosOptions);

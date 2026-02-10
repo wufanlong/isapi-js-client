@@ -4,10 +4,14 @@ const system = {
     putActivate(options) {
         return request.put(`http://${options.ip}/ISAPI/System/activate`, options.axiosData, options.axiosOptions)
     },
-    network: {
-        getInterfaces(options) {
-            return request.get(`http://${options.ip}/ISAPI/System/Network/interfaces`, options.axiosOptions);
-        }
+    getNetworkInterfaces(options) {
+        return request.get(`http://${options.ip}/ISAPI/System/Network/interfaces`, options.axiosOptions);
+    },
+    getNetworkInterfacesByID(options) {
+        return request.get(`http://${options.ip}/ISAPI/System/Network/interfaces/${options.axiosPathVar[0]}`, options.axiosOptions);
+    },
+    putNetworkInterfacesByID(options) {
+        return request.put(`http://${options.ip}/ISAPI/System/Network/interfaces/${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions);
     },
     getDeviceInfo(options) {
         return request.get(`http://${options.ip}/ISAPI/System/deviceInfo`, options.axiosOptions);
@@ -16,28 +20,28 @@ const system = {
         return request.put(`http://${options.ip}/ISAPI/System/deviceInfo`, options.axiosData, options.axiosOptions);
     },
     getVideoInputsChannelsOverlaysByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVal[0]}/overlays`, options.axiosOptions)
+        return request.get(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVar[0]}/overlays`, options.axiosOptions)
     },
     putVideoInputsChannelsOverlaysByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVal[0]}/overlays`, options.axiosData, options.axiosOptions)
+        return request.put(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVar[0]}/overlays`, options.axiosData, options.axiosOptions)
     },
     getVideoInputsChannelsOverlaysChannelNameOverlayByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVal[0]}/overlays/channelNameOverlay`, options.axiosOptions)
+        return request.get(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVar[0]}/overlays/channelNameOverlay`, options.axiosOptions)
     },
     putVideoInputsChannelsOverlaysChannelNameOverlayByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVal[0]}/overlays/channelNameOverlay`, options.axiosData, options.axiosOptions)
+        return request.put(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVar[0]}/overlays/channelNameOverlay`, options.axiosData, options.axiosOptions)
     },
     getVideoInputsChannelsByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVal[0]}`, options.axiosOptions)
+        return request.get(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVar[0]}`, options.axiosOptions)
     },
     putVideoInputsChannelsByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions)
+        return request.put(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions)
     },
     putReboot(options) {
         return request.put(`http://${options.ip}/ISAPI/System/reboot`, options.axiosData, options.axiosOptions)
     },
     putFactoryReset(options) {
-        return request.put(`http://${options.ip}/ISAPI/System/factoryReset?mode=${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions)
+        return request.put(`http://${options.ip}/ISAPI/System/factoryReset?mode=${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions)
     },
 }
 

@@ -10,7 +10,7 @@ const AUXInfo = {
     },
     getChannelsByID(options) {
         return request.get(
-            `http://${options.ip}/ISAPI/attributes/Channels/${options.axiosPathVal[0]}`,
+            `http://${options.ip}/ISAPI/attributes/Channels/${options.axiosPathVar[0]}`,
             options.axiosOptions
         );
     }

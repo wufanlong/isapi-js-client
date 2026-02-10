@@ -9,10 +9,10 @@ const security = {
         return request.put(`http://${options.ip}/ISAPI/Security/adminAccesses`, options.axiosData, options.axiosOptions)
     },
     getAdminAccessesByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/Security/adminAccesses/${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/Security/adminAccesses/${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     putAdminAccessesByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/Security/adminAccesses/${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions)
+        return request.put(`http://${options.ip}/ISAPI/Security/adminAccesses/${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions)
     },
     getAdminAccessesCapabilities(options) {
         return request.get(`http://${options.ip}/ISAPI/Security/adminAccesses/capabilities`, options.axiosOptions);
@@ -27,10 +27,10 @@ const security = {
         return request.get(`http://${options.ip}/ISAPI/Security/capabilities`, options.axiosOptions);
     },
     getCertificateSelectByFunctinName(options) {
-        return request.get(`http://${options.ip}/ISAPI/Security/certificate/select/${options.axiosPathVal[0]}?format=json`, options.axiosOptions); 
+        return request.get(`http://${options.ip}/ISAPI/Security/certificate/select/${options.axiosPathVar[0]}?format=json`, options.axiosOptions); 
     },
     putCertificateSelectByFunctinName(options) {
-        return request.put(`http://${options.ip}/ISAPI/Security/certificate/select/${options.axiosPathVal[0]}?format=json`, options.axiosData, options.axiosOptions); 
+        return request.put(`http://${options.ip}/ISAPI/Security/certificate/select/${options.axiosPathVar[0]}?format=json`, options.axiosData, options.axiosOptions); 
     },
     getCertificateSelectCapabilities(options) {
         return request.get(`http://${options.ip}/ISAPI/Security/certificate/select/capabilities?format=json`, options.axiosOptions); 
@@ -63,19 +63,19 @@ const security = {
         return request.put(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificateRevocation?format=json`, options.axiosData, options.axiosOptions); 
     },
     getDeviceCertificateCertificatesByCustomID(options) {
-        return request.get(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/${options.axiosPathVal[0]}?format=json`, options.axiosOptions); 
+        return request.get(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/${options.axiosPathVar[0]}?format=json`, options.axiosOptions); 
     },
     deleteDeviceCertificateCertificatesByCustomID(options) {
-        return request.delete(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/${options.axiosPathVal[0]}?format=json`, options.axiosOptions); 
+        return request.delete(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/${options.axiosPathVar[0]}?format=json`, options.axiosOptions); 
     },
     deleteDeviceCertificateCertificatesByID(options) {
-        return request.delete(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/${options.axiosPathVal[0]}?format=json`, options.axiosOptions); 
+        return request.delete(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/${options.axiosPathVar[0]}?format=json`, options.axiosOptions); 
     },
     putDeviceCertificateCertificatesRecreateByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/${options.axiosPathVal[0]}/recreate?format=json`, options.axiosData, options.axiosOptions); 
+        return request.put(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/${options.axiosPathVar[0]}/recreate?format=json`, options.axiosData, options.axiosOptions); 
     },
     getDeviceCertificateCertificatesStatusByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/${options.axiosPathVal[0]}/status?format=json`, options.axiosOptions); 
+        return request.get(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/${options.axiosPathVar[0]}/status?format=json`, options.axiosOptions); 
     },
     getDeviceCertificateCertificateCapabilities(options) {
         return request.get(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates/capabilities?format=json`, options.axiosOptions); 
@@ -90,16 +90,16 @@ const security = {
         return request.get(`http://${options.ip}/ISAPI/Security/deviceCertificate/certificates?format=json`, options.axiosOptions); 
     },
     putDeviceCertificateByCustomID(options) {
-        return request.put(`http://${options.ip}/ISAPI/Security/deviceCertificate?customID=${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions); 
+        return request.put(`http://${options.ip}/ISAPI/Security/deviceCertificate?customID=${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions); 
     },
     getDoubleVerificationUsersByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/Security/doubleVerification/users/${options.axiosPathVal[0]}?format=json`, options.axiosOptions); 
+        return request.get(`http://${options.ip}/ISAPI/Security/doubleVerification/users/${options.axiosPathVar[0]}?format=json`, options.axiosOptions); 
     },
     putDoubleVerificationUsersByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/Security/doubleVerification/users/${options.axiosPathVal[0]}?format=json`, options.axiosData, options.axiosOptions); 
+        return request.put(`http://${options.ip}/ISAPI/Security/doubleVerification/users/${options.axiosPathVar[0]}?format=json`, options.axiosData, options.axiosOptions); 
     },
     deleteDoubleVerificationUsersByID(options) {
-        return request.delete(`http://${options.ip}/ISAPI/Security/doubleVerification/users/${options.axiosPathVal[0]}?format=json`, options.axiosOptions); 
+        return request.delete(`http://${options.ip}/ISAPI/Security/doubleVerification/users/${options.axiosPathVar[0]}?format=json`, options.axiosOptions); 
     },
 
     getUserCheck(options) {

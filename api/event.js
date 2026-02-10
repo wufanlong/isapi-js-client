@@ -6,10 +6,10 @@ const event = {
         return request.get(`http://${options.ip}/ISAPI/Event/capabilities`, options.axiosOptions);
     },
     getChannelsCapabilitiesByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/Event/channels/${options.axiosPathVal[0]}/capabilities`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/Event/channels/${options.axiosPathVar[0]}/capabilities`, options.axiosOptions);
     },
     getIOTChannelsCapabilitiesByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/Event/IOT/channels/${options.axiosPathVal[0]}/capabilities?format=json`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/Event/IOT/channels/${options.axiosPathVar[0]}/capabilities?format=json`, options.axiosOptions);
     },
     getNotificationAlertStream(options) {
         return request.get(`http://${options.ip}/ISAPI/Event/notification/alertStream`, options.axiosOptions);
@@ -27,7 +27,7 @@ const event = {
         return request.delete(`http://${options.ip}/ISAPI/Event/notification/httpHosts`, options.axiosOptions);
     },
     postNotificationHttpHostsTestByID(options) {
-        return request.post(`http://${options.ip}/ISAPI/Event/notification/httpHosts/${options.axiosPathVal[0]}/test`, options.axiosOptions);
+        return request.post(`http://${options.ip}/ISAPI/Event/notification/httpHosts/${options.axiosPathVar[0]}/test`, options.axiosOptions);
     },
     getNotificationHttpHostsCapabilities(options) {
         return request.get(`http://${options.ip}/ISAPI/Event/notification/httpHosts/capabilities`, options.axiosOptions);
@@ -36,10 +36,10 @@ const event = {
         return request.post(`http://${options.ip}/ISAPI/Event/notification/subscribeEvent`, options.axiosData, options.axiosOptions);
     },
     getNotificationSubscribeEventByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/Event/notification/subscribeEvent/${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/Event/notification/subscribeEvent/${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     putNotificationSubscribeEventByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/Event/notification/subscribeEvent/${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/Event/notification/subscribeEvent/${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions);
     },
     getNotificationSubscribeEventCap(options) {
         return request.get(`http://${options.ip}/ISAPI/Event/notification/subscribeEventCap`, options.axiosOptions);
@@ -48,10 +48,10 @@ const event = {
         return request.put(`http://${options.ip}/ISAPI/Event/notification/unSubscribeEvent`, options.axiosData, options.axiosOptions);
     },
     getSchedulesByEventTypeAndID(options) {
-        return request.get(`http://${options.ip}/ISAPI/Event/schedules/${options.axiosPathVal[0]}/${options.axiosPathVal[1]}`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/Event/schedules/${options.axiosPathVar[0]}/${options.axiosPathVar[1]}`, options.axiosOptions);
     },
     putSchedulesByEventTypeAndID(options) {
-        return request.put(`http://${options.ip}/ISAPI/Event/schedules/${options.axiosPathVal[0]}/${options.axiosPathVal[1]}`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/Event/schedules/${options.axiosPathVar[0]}/${options.axiosPathVar[1]}`, options.axiosData, options.axiosOptions);
     },
     getTriggersHdBadBlock(options) {
         return request.get(`http://${options.ip}/ISAPI/Event/triggers/hdBadBlock`, options.axiosOptions);
@@ -84,22 +84,22 @@ const event = {
         return request.put(`http://${options.ip}/ISAPI/Event/triggers/severeHDFailure`, options.axiosData, options.axiosOptions);
     },
     getTriggersByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/Event/triggers/${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/Event/triggers/${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     putTriggersByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/Event/triggers/${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/Event/triggers/${options.axiosPathVar[0]}`, options.axiosData, options.axiosOptions);
     },
     deleteTriggersByID(options) {
-        return request.delete(`http://${options.ip}/ISAPI/Event/triggers/${options.axiosPathVal[0]}`, options.axiosOptions);
+        return request.delete(`http://${options.ip}/ISAPI/Event/triggers/${options.axiosPathVar[0]}`, options.axiosOptions);
     },
     getTriggersNotificationsByID(options) {
-        return request.get(`http://${options.ip}/ISAPI/Event/triggers/${options.axiosPathVal[0]}/notifications`, options.axiosOptions);
+        return request.get(`http://${options.ip}/ISAPI/Event/triggers/${options.axiosPathVar[0]}/notifications`, options.axiosOptions);
     },
     putTriggersNotificationsByID(options) {
-        return request.put(`http://${options.ip}/ISAPI/Event/triggers/${options.axiosPathVal[0]}/notifications`, options.axiosData, options.axiosOptions);
+        return request.put(`http://${options.ip}/ISAPI/Event/triggers/${options.axiosPathVar[0]}/notifications`, options.axiosData, options.axiosOptions);
     },
     deleteTriggersNotificationsByID(options) {
-        return request.delete(`http://${options.ip}/ISAPI/Event/triggers/${options.axiosPathVal[0]}/notifications`, options.axiosOptions);
+        return request.delete(`http://${options.ip}/ISAPI/Event/triggers/${options.axiosPathVar[0]}/notifications`, options.axiosOptions);
     },
     getTriggersCapIOT(options) {
         return request.get(`http://${options.ip}/ISAPI/Event/triggersCap/IOT`, options.axiosOptions);
