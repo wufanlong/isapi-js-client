@@ -36,6 +36,9 @@ const system = {
     putReboot(options) {
         return request.put(`http://${options.ip}/ISAPI/System/reboot`, options.axiosData, options.axiosOptions)
     },
+    putFactoryReset(options) {
+        return request.put(`http://${options.ip}/ISAPI/System/factoryReset?mode=${options.axiosPathVal[0]}`, options.axiosData, options.axiosOptions)
+    },
 }
 
 export default system;
