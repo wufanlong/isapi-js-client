@@ -1,4 +1,3 @@
-import { de } from 'element-plus/es/locales.mjs';
 import request from '../utils/request.js';
 
 const event = {

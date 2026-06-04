@@ -1,6 +1,10 @@
 import axios from 'axios';
+import http from 'http';
 
-const instance = axios.create({});
+const httpAgent = new http.Agent({
+  keepAlive: false,
+})
+const instance = axios.create({httpAgent});
 
 instance.interceptors.request.use((config) => {
   // console.log('[Axios Request]')
