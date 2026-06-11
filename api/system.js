@@ -31,6 +31,12 @@ const system = {
     putVideoInputsChannelsOverlaysChannelNameOverlayByID(options) {
         return request.put(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVar[0]}/overlays/channelNameOverlay`, options.axiosData, options.axiosOptions)
     },
+    getTime(options) {
+        return request.get(`http://${options.ip}/ISAPI/System/time`, options.axiosOptions)
+    },
+    putTime(options) {
+        return request.put(`http://${options.ip}/ISAPI/System/time`, options.axiosData, options.axiosOptions)
+    },
     getVideoInputsChannelsByID(options) {
         return request.get(`http://${options.ip}/ISAPI/System/Video/inputs/channels/${options.axiosPathVar[0]}`, options.axiosOptions)
     },
